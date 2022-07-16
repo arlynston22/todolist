@@ -1,4 +1,4 @@
-package com.arlynston.model;
+package com.arlynston.todolist.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
