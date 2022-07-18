@@ -18,4 +18,10 @@ public class TaskService {
     public void save(Task tdl) {
         rep.save(tdl);
     }
+    public Task get(Integer id) {
+    	return rep.findById(id).get();
+    }
+    public void delete(Integer id) {
+    	rep.deleteById(id);
+    }
 }
