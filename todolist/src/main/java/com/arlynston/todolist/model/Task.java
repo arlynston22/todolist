@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class task {
+public class Task {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String taskname;
-	public task() {
-		super();
+	public Task() {
 		// TODO Auto-generated constructor stub
+		super();
 	}
-	public task(int id, String taskname) {
+	public Task(int id, String taskname) {
 		super();
 		this.id = id;
 		this.taskname = taskname;
@@ -23,7 +23,7 @@ public class task {
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getTaskname() {
