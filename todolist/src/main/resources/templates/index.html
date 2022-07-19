@@ -13,6 +13,14 @@ input[type=checkbox]:checked + label {
   color:red;
   text-decoration: line-through;
 }
+
+.table{
+    word-wrap: break-word; 
+    table-layout:fixed;
+    width: 100%;
+    margin-left: auto; 
+  	margin-right: auto;
+}
 </style>
 
 </head>
@@ -46,22 +54,23 @@ input[type=checkbox]:checked + label {
 
 <!-- table -->
 	   <table class="table">
-		  <thead class="table table-striped">
+		  <thead>
 			    <tr>
-			       	<th>ID</th>
-		            <th>Task</th>
-		            <th>Edit</th>
-		            <th>Delete</th>
+			       	<th style="width: 5%" align=center;>ID</th>
+			       	<th style="width: 15%" align=center;>Status</th>
+		            <th style="width: 45%" align=center;>Task</th>
+		            <th style="width: 15%" align=center;>Action</th>
+		            <th style="width: 10%" align=center;>Edit</th>
+		            <th style="width: 10%" align=center;>Delete</th>
 			   </tr>
 		  </thead>
 		  <tbody>
 		      	<tr th:each="task : ${tasklist }">
 					<td th:text="${task.id}">ID</td>
-					<td>
-						<input type="checkbox" id="cbox" value="1"/>
-						<label th:text="${task.taskname}" for="cbox"></label>
-					</td>
-					<td><form th:action="@{'/edit/' + ${task.id}}"><button type = "submit" class="btn btn-success">Edit</button></form></td>    
+					<td th:text="${task.status}">status</td>
+					<td th:text="${task.taskname}">taskname</td>
+					<td><form th:action="@{'/updatestatus/' + ${task.id}}"><button type = "submit" class="btn btn-success">Complete Task</button></form></td>
+					<td><form th:action="@{'/edit/' + ${task.id}}"><button type = "submit" class="btn btn-warning">Edit</button></form></td>    
 					<td><form th:action="@{'/delete/' + ${task.id}}"><button type = "submit" class="btn btn-danger">Delete</button></form></td>
 					
 				</tr>

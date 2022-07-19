@@ -11,14 +11,16 @@ public class Task {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String taskname;
+	private String status;
 	public Task() {
 		// TODO Auto-generated constructor stub
 		super();
 	}
-	public Task(int id, String taskname) {
+	public Task(int id, String taskname, String status) {
 		super();
 		this.id = id;
 		this.taskname = taskname;
+		this.status = status;
 	}
 	public int getId() {
 		return id;
@@ -32,5 +34,12 @@ public class Task {
 	public void setTaskname(String taskname) {
 		this.taskname = taskname;
 	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
 	
 }
